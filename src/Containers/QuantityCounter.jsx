@@ -1,13 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 
 function QuantityCounter({ quantity, onIncrease, onDecrease, min = 0 }) {
   return (
-    <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-      <button onClick={onDecrease} disabled={quantity <= min}>
+    <div className="QuantityCounter">
+      <button
+        className="QuantityButton"
+        onClick={onDecrease}
+        disabled={quantity <= min}
+      >
         -
       </button>
-      <span>{quantity}</span>
-      <button onClick={onIncrease}>+</button>
+      <span className="QuantityValue">{quantity}</span>
+      <button className="QuantityButton" onClick={onIncrease}>
+        +
+      </button>
     </div>
   );
 }

@@ -106,6 +106,13 @@
   align-items: center;
 }
 
+.QuantityCounter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
 .QuantityBtn {
   display: flex;
   justify-content: center;
@@ -119,6 +126,15 @@
 }
 .QuantityBtn:hover {
   background-color: rgb(76, 43, 226);
+}
+.QuantityButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.QuantityValue {
+  min-width: 20px;
+  text-align: center;
 }
 
 img {
