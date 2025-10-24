@@ -41,40 +41,42 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-
+  align-items: flex-start;
   /* max-width: 800px; */
   /* border: 1px solid white; */
 }
 
 .CartContainer {
-  width: 25%;
-  justify-content: center;
-
-  /* position: sticky; */
-  /* top: 0; Adjust this value as needed */
-  /* max-height: 100vh; Ensure it doesn't exceed the viewport height */
-  /* overflow-y: auto; Add scroll if content exceeds the container height */
-
-  /* border: 1px solid white; */
+  position: sticky;
+  top: 90px;
+  background: #2b3036;
+  border: 1px solid wheat;
+  border-radius: 10px;
+  padding: 10px;
+  height: fit-content;
 }
 
 .CartCard {
+  background-color: #1e2227;
+  border: 1px solid #666;
+  border-radius: 8px;
+  padding: 6px;
   display: flex;
-  /* flex-direction: column; */
-  justify-content: space-around;
   align-items: center;
-  /* flex-wrap: wrap; */
-  border: 2px wheat solid;
-  border-radius: 10px;
-  margin: 10px;
-  padding: 5px;
-  background-color: rgb(43, 48, 54);
+  gap: 8px;
+}
+
+.CartCard img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 5px;
 }
 
 .CartCardInfo {
-  /* display: flex;
-  justify-content: space-around; */
-  width: 50%;
+  text-align: left;
+  flex: 1;
+  font-size: 13px;
 }
 
 .ProductsContainer {
@@ -83,6 +85,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: flex-start;
+  gap: 12px;  
   /* border: 1px solid white; */
 }
 
@@ -92,6 +96,8 @@
   border-radius: 10px;
   margin: 10px;
   padding: 5px;
+  flex: 0 0 calc(25% - 12px); 
+  max-width: calc(25% - 12px);
 }
 
 .ProductQuantityDiv {
@@ -151,3 +157,53 @@ img {
   background-color: green;
   width: 50%;
 }
+
+@media (max-width: 1200px) {
+  .ProductCard {
+    flex: 0 0 calc(33.333% - 12px);
+    max-width: calc(33.333% - 12px);
+  }
+}
+
+
+@media (max-width: 900px) {
+  .ProductCard {
+    flex: 0 0 calc(50% - 12px);
+    max-width: calc(50% - 12px);
+  }
+}
+
+* { box-sizing: border-box; }
+
+.CartHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.CartMiniTotal { opacity: 0.9; }
+
+.CartEmpty {
+  padding: 16px;
+  background: #1f2328;
+  border: 1px dashed #666;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.CartList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 8px 0;
+}
+
+.CartActions {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 8px;
+}
+
+.counter-button { display: inline-block; }
+.counter-button:hover { background: rgb(76, 43, 226); }
